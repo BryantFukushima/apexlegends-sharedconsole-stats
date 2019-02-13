@@ -98,7 +98,7 @@ class ApexStatsForm extends Component {
                     ]
                 },
                 value: "ps4",
-                label: "Total Player Respawns: "
+                label: "Platform: "
             }
         }
     };
@@ -113,7 +113,6 @@ class ApexStatsForm extends Component {
         for (let formElemId in this.state.statForm) {
             formData[formElemId] = this.state.statForm[formElemId].value;
         }
-        console.log(formData);
 
         this.props.onAddGame(formData);
     };
@@ -157,11 +156,7 @@ class ApexStatsForm extends Component {
             </form>
         );
 
-        return (
-            <div>
-                {form}
-            </div>
-        );
+        return <div>{form}</div>;
     }
 }
 

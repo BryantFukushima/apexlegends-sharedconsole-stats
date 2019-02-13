@@ -5,8 +5,16 @@ const initialState = {
     games: []
 };
 
-const addGame = (state, action) => {
-    let newGame = action.game;
+const fetchSuccess = (state, action) => {
+    return updateObject(state, {
+        games: action.games
+    });
+};
+
+const addGameSuccess = (state, action) => {
+    let newGame = updateObject(action.game.game, {
+        id: action.game._id
+    })
     return updateObject(state, {
         games: state.games.concat(newGame)
     });
@@ -14,8 +22,10 @@ const addGame = (state, action) => {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.ADD_GAME:
-            return addGame(state, action);
+        case actionTypes.FETCH_SUCCESS:
+            return fetchSuccess(state, action);
+        case actionTypes.ADD_GAME_SUCCESS:
+            return addGameSuccess(state, action);
         default:
             return state;
     }

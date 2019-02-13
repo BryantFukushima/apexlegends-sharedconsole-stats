@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import Input from "../../../components/UI/Input/Input";
 import { updateObject } from "../../../shared/utilities";
-import * as actions from '../../../store/actions/actions';
+import * as actions from "../../../store/actions/actions";
 
 class ApexStatsForm extends Component {
     state = {
@@ -97,10 +97,15 @@ class ApexStatsForm extends Component {
                         { value: "pc", placeholder: "PC" }
                     ]
                 },
+                value: "ps4",
                 label: "Total Player Respawns: "
             }
         }
     };
+
+    componentDidMount() {
+        this.props.onFetchGames();
+    }
 
     statFormHandler = event => {
         event.preventDefault();
@@ -152,41 +157,24 @@ class ApexStatsForm extends Component {
             </form>
         );
 
-        let games = (
-            <div>
-                {this.props.games.map(game => (
-                    <div key={Math.random()}>
-                        <p>player: {game.user}</p>
-                        <p>Legend: {game.legend}</p>
-                        <p>Kills: {game.kills}</p>
-                        <p>Damage Dealt: {game.damage}</p>
-                        <p>Survive Time: {game.surviveMin}min.{game.surviveSec}sec.</p>
-                        <p>Teammate Revives: {game.revive}</p>
-                        <p>Teammate Respawns: {game.respawn}</p>
-                        <p>Platform: {game.platform}</p>
-                    </div>
-                ))}
-            </div>
-        )
         return (
-        <div>
-        {form}
-        {games}
-        </div>
+            <div>
+                {form}
+            </div>
         );
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-        games: state.games
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddGame: game => dispatch(actions.addGame(game))
+        onAddGame: game => dispatch(actions.addGame(game)),
+        onFetchGames: () => {
+            dispatch(actions.fetchGames());
+        }
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ApexStatsForm);
+export default connect(
+    null,
+    mapDispatchToProps
+)(ApexStatsForm);

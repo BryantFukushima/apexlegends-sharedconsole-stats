@@ -23,22 +23,6 @@ const input = props => {
                 </select>
             );
             break;
-        case "time":
-            inputElement = (
-                <div>
-                    <input
-                        {...props.elemConfig.surviveMin.config}
-                        value={props.elemConfig.surviveMin.value}
-                        onChange={props.changed}
-                    />
-                    <input
-                        {...props.elemConfig.surviveSec.config}
-                        value={props.elemConfig.surviveSec.value}
-                        onChange={props.changed}
-                    />
-                </div>
-            );
-            break;
         default:
             inputElement = (
                 <input
@@ -49,7 +33,7 @@ const input = props => {
             );
     }
     return (
-        <div>
+        <div className={props.classes}>
             <label>{props.label}</label>
             {inputElement}
         </div>

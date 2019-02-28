@@ -16,7 +16,8 @@ class ApexStatsForm extends Component {
                     placeholder: "User"
                 },
                 value: "",
-                label: "Player: "
+                label: "Player: ",
+                class: "User"
             },
             legend: {
                 elemType: "select",
@@ -33,7 +34,8 @@ class ApexStatsForm extends Component {
                     ]
                 },
                 value: "bloodhound",
-                label: "Legend: "
+                label: "Legend: ",
+                class: "Legend"
             },
             rank: {
                 elemType: "input",
@@ -42,7 +44,8 @@ class ApexStatsForm extends Component {
                     placeholder: "Rank"
                 },
                 value: "",
-                label: "Match Rank: "
+                label: "Match Rank: ",
+                class: "Rank"
             },
             kills: {
                 elemType: "input",
@@ -51,7 +54,8 @@ class ApexStatsForm extends Component {
                     placeholder: "Kills"
                 },
                 value: "",
-                label: "Kill Count: "
+                label: "Kill Count: ",
+                class: "Kills"
             },
             damage: {
                 elemType: "input",
@@ -60,7 +64,8 @@ class ApexStatsForm extends Component {
                     placeholder: "Damage"
                 },
                 value: "",
-                label: "Total Damage Dealt: "
+                label: "Total Damage Dealt: ",
+                class: "Damage"
             },
             surviveMin: {
                 elemType: "input",
@@ -69,7 +74,8 @@ class ApexStatsForm extends Component {
                     placeholder: "min."
                 },
                 value: "",
-                label: "Total Survival Time: "
+                label: "Total Survival Time: ",
+                class: "Mins"
             },
             surviveSec: {
                 elemType: "input",
@@ -77,7 +83,8 @@ class ApexStatsForm extends Component {
                     type: "number",
                     placeholder: "sec."
                 },
-                value: ""
+                value: "",
+                class: "Secs"
             },
             revive: {
                 elemType: "input",
@@ -86,7 +93,8 @@ class ApexStatsForm extends Component {
                     placeholder: "Revived"
                 },
                 value: "",
-                label: "Total Players Revived: "
+                label: "Total Players Revived: ",
+                class: "Revive"
             },
             respawn: {
                 elemType: "input",
@@ -95,7 +103,8 @@ class ApexStatsForm extends Component {
                     placeholder: "Respawns"
                 },
                 value: "",
-                label: "Total Player Respawns: "
+                label: "Total Player Respawns: ",
+                class: "Respawn"
             },
             platform: {
                 elemType: "select",
@@ -107,7 +116,8 @@ class ApexStatsForm extends Component {
                     ]
                 },
                 value: "ps4",
-                label: "Platform: "
+                label: "Platform: ",
+                class: "Platform"
             }
         }
     };
@@ -167,6 +177,7 @@ class ApexStatsForm extends Component {
             <form className={styles.ApexForm} onSubmit={this.statFormHandler}>
                 {formElemArray.map(formElem => (
                     <Input
+                        classes={formElem.elementConfig.class}
                         key={formElem.id}
                         elemType={formElem.elementConfig.elemType}
                         elemConfig={formElem.elementConfig.config}

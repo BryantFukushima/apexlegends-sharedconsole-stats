@@ -1,5 +1,10 @@
+@import '../../../assets/sass/variables.scss';
+
 .ApexForm {
     display: flexbox;
     align-content: flex-start;
-    // text-align: center;
+    background: #dee0ce;
+    margin: 2rem;
+    padding: 2rem;
+    color: $dark-grey;
 }

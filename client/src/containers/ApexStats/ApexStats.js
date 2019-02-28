@@ -38,8 +38,14 @@ class ApexStats extends Component {
         )
         return (
             <div className={styles.Apex}>
-                <h1>Apex Legends: Shared Console Stats</h1>
-                <ApexStatsForm />
+                <header className={styles.ApexHeader}>
+                    <div className={styles.ApexHeader__logo}>
+                        <p>APEX Legends</p>
+                        <p>Stat Tracker</p>
+                    </div>
+                    <h1>Apex Mission Report:</h1>
+                    <ApexStatsForm />
+                </header>
                 {sortButtons}
                 {games}
             </div>

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import Input from "../../../components/UI/Input/Input";
 import { updateObject } from "../../../shared/utilities";
-import * as actions from "../../../store/actions/actions";
+import * as actions from "../../../store/actions/action";
 
 class ApexStatsForm extends Component {
     state = {
@@ -34,6 +34,15 @@ class ApexStatsForm extends Component {
                 },
                 value: "bloodhound",
                 label: "Legend: "
+            },
+            rank: {
+                elemType: "input",
+                config: {
+                    type: "number",
+                    placeholder: "Rank"
+                },
+                value: "",
+                label: "Match Rank: "
             },
             kills: {
                 elemType: "input",
@@ -113,8 +122,12 @@ class ApexStatsForm extends Component {
         for (let formElemId in this.state.statForm) {
             formData[formElemId] = this.state.statForm[formElemId].value;
         }
+        let date = new Date();
+        let formComplete = updateObject(formData, {
+            date: date
+        })
 
-        this.props.onAddGame(formData);
+        this.props.onAddGame(formComplete);
     };
 
     inputChangedHandler = (event, inputId) => {

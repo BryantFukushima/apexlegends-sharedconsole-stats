@@ -14,8 +14,14 @@ app.use(bodyParser.json());
 //allow api to be accessed by other apps (CORS)
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header(
+        "Access-Control-Allow-Methods",
+        "POST, GET, OPTIONS, PUT, DELETE"
+    );
     next();
 });
 
@@ -41,15 +47,23 @@ app.get("/games", function(req, res) {
 });
 
 app.post("/add-game", (req, res) => {
-    db.games.insert(req.body,
-        (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                res.json(result);
-            }
+    db.games.insert(req.body, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(result);
         }
-    );
+    });
+});
+
+app.post("/delete-game/:id", (req, res) => {
+    db.games.remove({ _id: mongojs.ObjectId(req.params.id) }, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(result);
+        }
+    });
 });
 
 // Listen on port 3001

@@ -23,7 +23,7 @@ class ApexStats extends Component {
     render() {
         let games = (
             <div>
-                {this.props.games.reverse().map(game => (
+                {this.props.games.map(game => (
                     <Game key={game.id} gameData={game} clicked={() => this.deleteStatHandler(game.id)}/>
                 ))}
             </div>

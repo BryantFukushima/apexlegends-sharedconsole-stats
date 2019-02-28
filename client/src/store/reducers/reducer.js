@@ -23,7 +23,7 @@ const addGameSuccess = (state, action) => {
         id: action.game._id
     });
     return updateObject(state, {
-        games: state.games.concat(newGame)
+        games: state.games.concat(newGame).reverse()
     });
 };
 
@@ -37,7 +37,7 @@ const sortByUser = (state, action) => {
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.user;
         let userTwo = b.user;
-        return userOne > userTwo ? -1 : userOne < userTwo ? 1 : 0;
+        return userOne > userTwo ? 1 : userOne < userTwo ? -1 : 0;
     });
     return updateObject(state, {
         games: sortedGames
@@ -48,7 +48,7 @@ const sortByLegend = (state, action) => {
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.legend;
         let userTwo = b.legend;
-        return userOne > userTwo ? -1 : userOne < userTwo ? 1 : 0;
+        return userOne > userTwo ? 1 : userOne < userTwo ? -1 : 0;
     });
     return updateObject(state, {
         games: sortedGames
@@ -59,7 +59,7 @@ const sortByRank = state => {
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.rank;
         let userTwo = b.rank;
-        return userTwo - userOne;
+        return userOne - userTwo;
     });
     return updateObject(state, {
         games: sortedGames
@@ -70,7 +70,7 @@ const sortByKills = state => {
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.kills;
         let userTwo = b.kills;
-        return userOne - userTwo;
+        return userTwo - userOne;
     });
     return updateObject(state, {
         games: sortedGames
@@ -78,10 +78,11 @@ const sortByKills = state => {
 };
 
 const sortByDamage = state => {
+    
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.damage;
         let userTwo = b.damage;
-        return userOne - userTwo;
+        return userTwo - userOne;
     });
     return updateObject(state, {
         games: sortedGames
@@ -89,10 +90,11 @@ const sortByDamage = state => {
 };
 
 const sortByRevives = state => {
-    let sortedGames = [...state.games].sort((a, b) => {
-        let userOne = a.revives;
-        let userTwo = b.revives;
-        return userOne - userTwo;
+    let arr = [...state.games]
+    let sortedGames = arr.sort((a, b) => {
+        let userOne = a.revive;
+        let userTwo = b.revive;
+        return userTwo - userOne;
     });
     return updateObject(state, {
         games: sortedGames
@@ -123,9 +125,9 @@ const sortByPlatform = state => {
 
 const sortByDate = state => {
     let sortedGames = [...state.games].sort((a, b) => {
-        let userOne = a.date;
-        let userTwo = b.date;
-        return userOne - userTwo;
+        let userOne = Date.parse(a.date);
+        let userTwo = Date.parse(b.date);
+        return userTwo - userOne;
     });
     return updateObject(state, {
         games: sortedGames

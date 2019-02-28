@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ApexStats from './containers/ApexStats/ApexStats'
-import './App.css';
+import './App.module.scss';
 
 class App extends Component {
   render() {

@@ -125,9 +125,21 @@ class ApexStatsForm extends Component {
         let date = new Date();
         let formComplete = updateObject(formData, {
             date: date
-        })
+        });
 
         this.props.onAddGame(formComplete);
+
+        let clearForm = {...this.state.statForm};
+
+        for (let i in clearForm) {
+            if (clearForm[i].elemType !== 'select') {
+                clearForm[i].value = ""
+            }
+        }
+
+        this.setState({
+            statForm: clearForm
+        })
     };
 
     inputChangedHandler = (event, inputId) => {

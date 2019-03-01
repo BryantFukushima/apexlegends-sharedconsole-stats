@@ -27,7 +27,7 @@
 
             &:focus {
                 outline: none;
-                background: rgba($pure-white, .7);
+                background: rgba($pure-white, 0.7);
             }
         }
     }
@@ -48,16 +48,17 @@
         color: $light-red;
         font-size: 1.1rem;
         font-weight: 700;
-        letter-spacing: .1em;
-        transition: all .1s ease-in;
+        letter-spacing: 0.1em;
+        transition: all 0.1s ease-in;
 
         &:hover {
             transform: (translateY(-3%));
-            box-shadow: 2px 2px 5px rgba($dark-grey, .5);
+            box-shadow: 2px 2px 5px rgba($dark-grey, 0.5);
+            cursor: pointer;
         }
         &:active {
             transform: (translateY(3%));
-            box-shadow: -1px -1px 1px inset rgba(#eee, .5);
+            box-shadow: -1px -1px 1px inset rgba(#eee, 0.5);
         }
 
         &:focus {

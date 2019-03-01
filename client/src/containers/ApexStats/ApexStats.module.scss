@@ -3,8 +3,7 @@
 .Apex {
     text-align: center;
     &Header {
-        background: 
-            linear-gradient(to top, #db322d, $primary-red);
+        background: linear-gradient(to top, #db322d, $primary-red);
         &__logo {
             padding: 1rem;
             text-align: left;
@@ -27,5 +26,15 @@
             text-transform: uppercase;
             font-weight: 900;
         }
+    }
+    &Sort {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin: 1rem;
+        padding-right: 1.6rem;
+    }
+    &Games {
+        margin: 1rem;
     }
 }

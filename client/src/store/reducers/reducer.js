@@ -78,7 +78,6 @@ const sortByKills = state => {
 };
 
 const sortByDamage = state => {
-    
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.damage;
         let userTwo = b.damage;
@@ -89,8 +88,23 @@ const sortByDamage = state => {
     });
 };
 
+const sortByTime = state => {
+    let sortedGames = [...state.games].sort((a, b) => {
+        let oneMins = parseInt(a.surviveMin) * 60;
+        let oneSecs = parseInt(a.surviveSec);
+        let userOne = oneMins + oneSecs;
+        let twoMins = parseInt(b.surviveMin) * 60;
+        let twoSecs = parseInt(b.surviveSec);
+        let userTwo = twoMins + twoSecs;
+        return userTwo - userOne;
+    });
+    return updateObject(state, {
+        games: sortedGames
+    });
+};
+
 const sortByRevives = state => {
-    let arr = [...state.games]
+    let arr = [...state.games];
     let sortedGames = arr.sort((a, b) => {
         let userOne = a.revive;
         let userTwo = b.revive;
@@ -116,7 +130,7 @@ const sortByPlatform = state => {
     let sortedGames = [...state.games].sort((a, b) => {
         let userOne = a.platform;
         let userTwo = b.platform;
-        return userOne - userTwo;
+        return userOne > userTwo ? 1 : userOne < userTwo ? -1 : 0;
     });
     return updateObject(state, {
         games: sortedGames
@@ -152,6 +166,8 @@ const reducer = (state = initialState, action) => {
             return sortByKills(state);
         case actionTypes.SORT_BY_DAMAGE:
             return sortByDamage(state);
+        case actionTypes.SORT_BY_TIME:
+            return sortByTime(state);
         case actionTypes.SORT_BY_REVIVES:
             return sortByRevives(state);
         case actionTypes.SORT_BY_RESPANWS:

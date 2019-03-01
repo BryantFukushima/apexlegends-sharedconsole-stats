@@ -131,6 +131,10 @@ export const sortBy = sort => {
             return {
                 type: actionTypes.SORT_BY_DAMAGE
             };
+        case "Time":
+            return {
+                type: actionTypes.SORT_BY_TIME
+            };
         case "Revives":
             return {
                 type: actionTypes.SORT_BY_REVIVES

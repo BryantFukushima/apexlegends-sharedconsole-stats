@@ -15,6 +15,7 @@ export const SORT_BY_LEGEND = "SORT_BY_LEGEND";
 export const SORT_BY_RANK = "SORT_BY_RANK";
 export const SORT_BY_KILLS = "SORT_BY_KILLS";
 export const SORT_BY_DAMAGE = "SORT_BY_DAMAGE";
+export const SORT_BY_TIME = "SORT_BY_TIME";
 export const SORT_BY_REVIVES = "SORT_BY_REVIVES";
 export const SORT_BY_RESPANWS = "SORT_BY_RESPANWS";
 export const SORT_BY_PLATFORM = "SORT_BY_PLATFORM";

@@ -1,0 +1,16 @@
+@import "../../assets/sass/variables.scss";
+.Active {
+    color: lighten($light-red, 5%);
+}
+
+.SortType {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    font-size: 0.8rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

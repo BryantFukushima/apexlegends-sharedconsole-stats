@@ -1,9 +1,28 @@
+@import "../../assets/sass/variables.scss";
 .Game {
-    border: 2px solid lightgray;
-    padding: 20px;
-    margin: 20px 100px;
+    border: 2px solid rgba($primary-red, 0.7);
     display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-radius: 0 15px 0 15px;
+    background: $dark-grey;
+    box-shadow: 3px 3px 3px rgba($dark-grey, 1);
     p {
-        margin: .5rem;
+        padding: 0.5rem;
+        height: 4rem;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+        justify-content: center;
     }
-} 
+    div {
+        p {
+            color: lighten($primary-red, 10%);
+        }
+    }
+}
+
+.Game:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+}

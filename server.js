@@ -6,9 +6,6 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//Static file declaration
-app.use(express.static(path.join(__dirname, "client/build")));
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -69,6 +66,9 @@ app.post("/delete-game/:id", (req, res) => {
         }
     });
 });
+
+//Static file declaration
+app.use(express.static("client/build"));
 
 //production mode
 if (process.env.NODE_ENV === "production") {

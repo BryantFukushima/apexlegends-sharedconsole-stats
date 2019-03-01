@@ -28,18 +28,16 @@
         }
     }
     &Data {
-        padding-bottom: 1rem;
+        padding: 0 1rem 1.5rem;
     }
     &Sort {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         margin: 1rem;
-        padding-right: 2rem;
+        padding-right: 1.8rem;
     }
     &Games {
         margin: 1rem;
     }
-
 }
-

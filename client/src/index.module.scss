@@ -1,12 +1,17 @@
 @import "./assets/sass/reset.scss";
 @import "./assets/sass/variables.scss";
 
+html {
+    min-height: 100%;
+    background: linear-gradient(to bottom, darken($dark-grey, 20%), lighten($dark-grey, 25%));
+    position: relative;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica", san-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: lighten($dark-grey, 6%);
     color: $grey;
 }

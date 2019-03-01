@@ -27,14 +27,19 @@
             font-weight: 900;
         }
     }
+    &Data {
+        padding-bottom: 1rem;
+    }
     &Sort {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         margin: 1rem;
-        padding-right: 1.6rem;
+        padding-right: 2rem;
     }
     &Games {
         margin: 1rem;
     }
+
 }
+

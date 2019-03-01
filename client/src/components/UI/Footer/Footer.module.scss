@@ -1,0 +1,21 @@
+@import '../../../assets/sass/variables.scss';
+
+.Footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: darken($dark-grey, 5%);
+    margin-bottom: -5rem;
+    height: 5rem;
+    p {
+        position: absolute;
+        bottom: 20%;
+        width: 100%;
+        text-align: center;
+        color: rgba($grey, .25);
+        font-size: .8rem;
+        span {
+            margin: 0 3px;
+        }
+    }
+}

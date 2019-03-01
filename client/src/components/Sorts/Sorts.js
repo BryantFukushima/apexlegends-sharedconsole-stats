@@ -7,9 +7,10 @@ const Sorts = props => {
     if (props.isActive) {
         statClass.push(styles.Active);
     }
+    let text = props.sort.toUpperCase();
     return (
         <p className={statClass.join(' ')} onClick={props.clicked}>
-            {props.sort}
+            {text}
         </p>
     );
 };

@@ -7,6 +7,7 @@ import * as actions from "../../store/actions/action";
 import Game from "../../components/Game/Game";
 import Sorts from "../../components/Sorts/Sorts";
 import { updateObject } from "../../shared/utilities";
+import Footer from '../../components/UI/Footer/Footer'
 
 class ApexStats extends Component {
     state = {
@@ -135,8 +136,12 @@ class ApexStats extends Component {
                     <h1>Apex Mission Report:</h1>
                     <ApexStatsForm />
                 </header>
+                <div className={styles.ApexData}>
                 {sortButtons}
                 {games}
+                </div>
+                <Footer />
+
             </div>
         );
     }

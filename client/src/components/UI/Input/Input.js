@@ -1,5 +1,7 @@
 import React from "react";
 
+import * as styles from './Input.module.scss';
+
 const input = props => {
     let inputElement = null;
     switch (props.elemType) {
@@ -33,7 +35,8 @@ const input = props => {
             );
     }
     return (
-        <div className={props.classes}>
+        
+        <div className={styles[props.classes]}>
             <label>{props.label}</label>
             {inputElement}
         </div>

@@ -13,7 +13,7 @@ class ApexStatsForm extends Component {
                 elemType: "input",
                 config: {
                     type: "text",
-                    placeholder: "User"
+                    placeholder: "Name"
                 },
                 value: "",
                 label: "Player: ",
@@ -84,6 +84,7 @@ class ApexStatsForm extends Component {
                     placeholder: "sec."
                 },
                 value: "",
+                label: " :",
                 class: "Secs"
             },
             revive: {
@@ -188,7 +189,7 @@ class ApexStatsForm extends Component {
                         label={formElem.elementConfig.label}
                     />
                 ))}
-                <button>Enter</button>
+                <button>SUBMIT</button>
             </form>
         );
 

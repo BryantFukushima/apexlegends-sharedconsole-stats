@@ -103,9 +103,9 @@ const sortByRevives = state => {
 
 const sortByRespawns = state => {
     let sortedGames = [...state.games].sort((a, b) => {
-        let userOne = a.respawns;
-        let userTwo = b.respawns;
-        return userOne - userTwo;
+        let userOne = a.respawn;
+        let userTwo = b.respawn;
+        return userTwo - userOne;
     });
     return updateObject(state, {
         games: sortedGames

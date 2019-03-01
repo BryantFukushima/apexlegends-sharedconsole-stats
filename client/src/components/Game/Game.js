@@ -5,7 +5,7 @@ import * as styles from "./Game.module.scss";
 const Game = props => {
     return (
         <div className={styles.Game}>
-            <p>{props.gameData.id}</p>
+            {/* <p>{props.gameData.id}</p> */}
             <p>player: {props.gameData.user}</p>
             <p>Legend: {props.gameData.legend}</p>
             <p>Rank: {props.gameData.rank}</p>

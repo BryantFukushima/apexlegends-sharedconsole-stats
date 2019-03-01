@@ -1,10 +1,67 @@
-@import '../../../assets/sass/variables.scss';
+@import "../../../assets/sass/variables.scss";
 
 .ApexForm {
     display: flexbox;
     align-content: flex-start;
-    background: #dee0ce;
-    margin: 2rem;
+    background: $grey;
+    margin: 2rem 8rem 3.5rem 8rem;
     padding: 2rem;
     color: $dark-grey;
+    border: 4px double $dark-red;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        margin: 1rem;
+        height: 50%;
+        input {
+            border-radius: 3px;
+            border: none;
+            border-bottom: 2px solid $primary-red;
+            background: rgba($primary-red, 0.05);
+            height: 1.05rem;
+            font-size: 1rem;
+            text-align: center;
+            width: 8rem;
+
+            &:focus {
+                outline: none;
+                background: rgba($pure-white, .7);
+            }
+        }
+    }
+
+    div:nth-child(6) {
+        margin: 1rem 0 1rem 5px;
+    }
+    div:nth-child(7) {
+        margin: 1rem 5px 1rem 0;
+    }
+
+    button {
+        flex: 1 100%;
+        margin: 1.5rem 4rem 0;
+        height: 2.5rem;
+        border-radius: 5px;
+        background: $dark-grey;
+        color: $light-red;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        transition: all .1s ease-in;
+
+        &:hover {
+            transform: (translateY(-3%));
+            box-shadow: 2px 2px 5px rgba($dark-grey, .5);
+        }
+        &:active {
+            transform: (translateY(3%));
+            box-shadow: -1px -1px 1px inset rgba(#eee, .5);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
 }

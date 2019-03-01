@@ -23,17 +23,17 @@ class ApexStatsForm extends Component {
                 elemType: "select",
                 config: {
                     options: [
-                        { value: "bloodhound", placeholder: "Bloodhound" },
-                        { value: "gibraltar", placeholder: "Gibraltar" },
-                        { value: "lifeline", placeholder: "Lifeline" },
-                        { value: "pathfinder", placeholder: "Pathfinder" },
-                        { value: "wraith", placeholder: "Wraith" },
-                        { value: "bangalore", placeholder: "Bangalore" },
-                        { value: "caustic", placeholder: "Caustic" },
-                        { value: "mirage", placeholder: "Mirage" }
+                        { value: "Bloodhound", placeholder: "Bloodhound" },
+                        { value: "Gibraltar", placeholder: "Gibraltar" },
+                        { value: "Lifeline", placeholder: "Lifeline" },
+                        { value: "Pathfinder", placeholder: "Pathfinder" },
+                        { value: "Wraith", placeholder: "Wraith" },
+                        { value: "Bangalore", placeholder: "Bangalore" },
+                        { value: "Caustic", placeholder: "Caustic" },
+                        { value: "Mirage", placeholder: "Mirage" }
                     ]
                 },
-                value: "bloodhound",
+                value: "Bloodhound",
                 label: "Legend: ",
                 class: "Legend"
             },
@@ -111,12 +111,12 @@ class ApexStatsForm extends Component {
                 elemType: "select",
                 config: {
                     options: [
-                        { value: "ps4", placeholder: "PS4" },
-                        { value: "xbox", placeholder: "Xbox One" },
-                        { value: "pc", placeholder: "PC" }
+                        { value: "PS4", placeholder: "PS4" },
+                        { value: "Xbox One", placeholder: "Xbox One" },
+                        { value: "PC", placeholder: "PC" }
                     ]
                 },
-                value: "ps4",
+                value: "PS4",
                 label: "Platform: ",
                 class: "Platform"
             }

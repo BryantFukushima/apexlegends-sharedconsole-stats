@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 });
 
 // database configuration
-const MONGODB_URI = process.env.MONGODB_URI || "apexstats_db";
+const MONGODB_URI = process.env.MONGODB_URI;
 const collections = ["games"];
 
 // mongojs hook database to the db variable

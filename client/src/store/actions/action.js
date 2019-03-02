@@ -25,7 +25,7 @@ export const fetchGames = () => {
     return dispatch => {
         dispatch(fetchStart());
         axios
-            .get("http://localhost:3001/games")
+            .get("/games")
             .then(res => {
                 dispatch(fetchSuccess(res));
             })
@@ -60,7 +60,7 @@ export const addGame = game => {
     return dispatch => {
         dispatch(addGameStart());
         axios
-            .post("http://localhost:3001/add-game", {
+            .post("/add-game", {
                 game
             })
             .then(res => {
@@ -98,7 +98,7 @@ export const deleteGame = id => {
     return dispatch => {
         dispatch(deleteGameStart());
         axios
-            .post(`http://localhost:3001/delete-game/${id}`)
+            .post(`/delete-game/${id}`)
             .then(() => {
                 dispatch(deleteGameSuccess(id));
             })

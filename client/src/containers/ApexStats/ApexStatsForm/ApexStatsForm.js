@@ -132,12 +132,12 @@ class ApexStatsForm extends Component {
         const formData = {};
         for (let formElemId in this.state.statForm) {
             let value = this.state.statForm[formElemId].value;
-            if(this.state.statForm[formElemId].class === "Mins"){
-                if(this.state.statForm[formElemId].value < 10) {
-                    value = "0" + this.state.statForm[formElemId].value;
+            if(this.state.statForm[formElemId].class !== "User") {
+                if(!this.state.statForm[formElemId].value) {
+                    value = 0;
                 }
             }
-            if(this.state.statForm[formElemId].class === "Secs"){
+            if(this.state.statForm[formElemId].class === "Mins" || this.state.statForm[formElemId].class === "Secs"){
                 if(this.state.statForm[formElemId].value < 10) {
                     value = "0" + this.state.statForm[formElemId].value;
                 }

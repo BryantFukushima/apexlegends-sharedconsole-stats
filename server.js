@@ -67,7 +67,7 @@ app.post("/delete-game/:id", (req, res) => {
     });
 });
 
-//Static file declaration
+// //Static file declaration
 app.use(express.static(path.join(__dirname, "client/build")));
 
 //production mode

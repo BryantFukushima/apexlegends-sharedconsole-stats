@@ -90,11 +90,11 @@ const sortByDamage = state => {
 
 const sortByTime = state => {
     let sortedGames = [...state.games].sort((a, b) => {
-        let oneMins = parseInt(a.surviveMin) * 60;
-        let oneSecs = parseInt(a.surviveSec);
+        let oneMins = Number(a.surviveMin) * 60;
+        let oneSecs = Number(a.surviveSec);
         let userOne = oneMins + oneSecs;
-        let twoMins = parseInt(b.surviveMin) * 60;
-        let twoSecs = parseInt(b.surviveSec);
+        let twoMins = Number(b.surviveMin) * 60;
+        let twoSecs = Number(b.surviveSec);
         let userTwo = twoMins + twoSecs;
         return userTwo - userOne;
     });

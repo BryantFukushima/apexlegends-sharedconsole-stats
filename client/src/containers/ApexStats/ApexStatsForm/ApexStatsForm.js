@@ -131,7 +131,19 @@ class ApexStatsForm extends Component {
         event.preventDefault();
         const formData = {};
         for (let formElemId in this.state.statForm) {
-            formData[formElemId] = this.state.statForm[formElemId].value;
+            let value = this.state.statForm[formElemId].value;
+            if(this.state.statForm[formElemId].class === "Mins"){
+                if(this.state.statForm[formElemId].value < 10) {
+                    value = "0" + this.state.statForm[formElemId].value;
+                }
+            }
+            if(this.state.statForm[formElemId].class === "Secs"){
+                if(this.state.statForm[formElemId].value < 10) {
+                    value = "0" + this.state.statForm[formElemId].value;
+                }
+            }
+            
+            formData[formElemId] = value;
         }
         let date = new Date();
         let formComplete = updateObject(formData, {

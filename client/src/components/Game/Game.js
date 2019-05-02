@@ -4,12 +4,16 @@ import * as styles from "./Game.module.scss";
 
 const Game = props => {
     let date = new Date(props.gameData.date)
-    let y = date.getFullYear().toString();
-    let m = date.getMonth().toString();
-    let d = date.getDate().toString();
-    let mm = (m.length < 2) ? '0' + m : m;
-    let dd = (d.length < 2) ? '0' + d : d; 
-    let dateFormat = mm + '/' + dd + '/' + y;
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    if(day < 10) {
+        day = "0" + day;
+    }
+    if(month < 10) {
+        month = "0" + month;
+    }
+    let dateFormat = month + "-" + day + "-" + year;
 
     return (
         <div className={styles.Game}>

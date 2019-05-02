@@ -145,9 +145,9 @@ class ApexStatsForm extends Component {
             
             formData[formElemId] = value;
         }
-        let date = new Date();
+        console.log(new Date());
         let formComplete = updateObject(formData, {
-            date: date
+            date: new Date()
         });
 
         this.props.onAddGame(formComplete);
